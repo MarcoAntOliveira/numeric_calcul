@@ -1,0 +1,28 @@
+list1 = [425, 431, 416, 419, 421, 436, 418, 410, 431, 433, 423, 426, 410, 
+         435, 436, 428, 411, 426, 409, 437, 422, 428, 420, 416, 417]
+count_med = 0
+valor_list = 0
+
+for i in list1:
+    count_med += 1
+for i in list1:
+    valor_list += i
+def desv_pad(list):    
+    count_med = 0
+    valor_list = 0
+    for i in list1:
+        count_med += 1
+    for i in list1:
+        valor_list += i
+    valor_med = valor_list/ count_med
+    valor_desv = 0  
+    for i in list1: 
+        valor_desv = valor_desv + (i - valor_med)**2  
+    var = valor_desv /(count_med - 1)
+    pad = var**1/2
+    return pad    
+        
+print(desv_pad(list1))        
+valor_med = valor_list/ count_med
+print(valor_med)
+    
