@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 21 10:13:32 2022
+
+@author: marcos.tome
+"""
+import numpy as np
+from Q05 import escalona
+
+def subs_reg(diag_p, diag_s, vet_const):
+    vet_const2 = np.zeros(len(vet_const))
+    vet_val = 0
+    vet_const2[len(vet_const) - 1] = vet_const[len(vet_const) - 1]
+    
+    for i in range(len(vet_const)-2 , 0, -1): 
+        for j in range(len(diag_p)-2 , 0, -1):
+            vet_val = (vet_const[i] - diag_s[i]*vet_const[i + 1])/diag_p[i]
+            vet_const2[i] = vet_val
+    return vet_const2        
+  
+     
+A = np.array([[-9, 0, 3, 0, 0, -120], 
+             [4, -4, 0, 0, 0, 0 ],
+             [0, 2, -9, 0, 0, 350],
+             [0, 1, 6, -9, 2, 0],
+             [5, 1, 0, 0, -2, 0]]) 
+nrow, ncol = A.shape
+A = escalona(A)
+vet_const = np.zeros(ncol)
+for i in range(0, nrow): 
+        for j in range(0, ncol):
+                if(ncol == 3):
+                    vet_const[i] = A[i:3]
+
+A = escalona(A)
+
+print(A)
+def  return_val(Q55, Q44):
+    vet_const = np.array([-120, 0, 350, 0, 0])
+    vet_const2 = np.zeros(len(diag_p))
+    A = np.array([[-9, 0, 3, 0, 0, -120], 
+                 [4, -4, 0, 0, 0, 0, 0],
+                 [0, 2, -9, 0, 0, 0, 350],
+                 [0, 1, 6, -Q44, 2, 0],
+                 [5, 1, 0, 0, -(Q55 +2), 0]]) 
+    
+     A = escalona(A)
+
+    vet_const = np.zeros(ncol)
+    for i in range(0, nrow): 
+            for j in range(0, ncol):
+                    if(ncol == 3):
+                        vet_const[i] = A[i:3]
+
+     subs_reg(A, )
+    
+
+
+    
+    
+       
+           c
